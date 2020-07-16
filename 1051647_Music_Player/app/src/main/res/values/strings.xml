@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Music Player</string>
+    <string name="ttf_1">&#xF0009;</string>
+    <string name="ttf_password">&#xF07F5;</string>
+    <string name="ttf_login">&#xF05FC; 登入</string>
+    <string name="btnFront">&#xF04AE;</string>
+    <string name="btnStop">&#xF04DB;</string>
+    <string name="btnPlay">&#xF040A;</string>
+    <string name="btnPause">&#xF03E4;</string>
+    <string name="btnNext">&#xF04AD;</string>
+    <string name="btnEnd">&#xF1398;</string>
+    <string name="btnexit">&#xF05FD; 離開</string>
+    <string name="btnRegister">&#xF0014; 註冊</string>
+
+</resources>

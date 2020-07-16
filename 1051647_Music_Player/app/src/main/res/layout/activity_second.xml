@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn1"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/fear" />
+
+                <ImageButton
+                    android:id="@+id/btn2"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/dont_wanna_cry" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn3"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/thanks" />
+
+                <ImageButton
+                    android:id="@+id/btn4"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ohmy" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn5"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/home" />
+
+                <ImageButton
+                    android:id="@+id/btn6"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/universe" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn7"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sing4u" />
+
+                <ImageButton
+                    android:id="@+id/btn8"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape01_radius"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/forlife" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/txtShow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txtShow"
+            android:textSize="20sp"
+            tools:ignore="InvalidId" />
+
+        <TextView
+            android:id="@+id/txtShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="點選歌曲即可播放"
+            android:layout_above="@+id/table"
+            android:textSize="24sp"
+            android:textColor="#152161"/>
+        <TextView
+            android:id="@+id/txtShow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/table"
+            android:layout_toRightOf="@+id/txtShow"
+            android:visibility="invisible"
+            />
+
+
+        <TableRow
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+           <!-- <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:id="@+id/btnFront"
+                android:background="@drawable/button_shape02_circle"
+                android:textSize="24sp"
+                android:text="@string/btnFront"/>-->
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:id="@+id/btnStop"
+                android:background="@drawable/button_shape02_circle"
+                android:textSize="24sp"
+                android:text="@string/btnStop"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:id="@+id/btnPlay"
+                android:background="@drawable/button_shape02_circle"
+                android:textSize="24sp"
+                android:text="@string/btnPlay"/>
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:id="@+id/btnPause"
+                android:background="@drawable/button_shape02_circle"
+                android:textSize="24sp"
+                android:text="@string/btnPause"/>
+           <!-- <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:id="@+id/btnNext"
+                android:background="@drawable/button_shape02_circle"
+                android:textSize="24sp"
+                android:text="@string/btnNext"/>-->
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="5dp"
+                android:id="@+id/btnEnd"
+                android:background="@drawable/button_shape02_circle"
+                android:textSize="24sp"
+                android:text="@string/btnEnd"/>
+
+        </TableRow>
+    </RelativeLayout>
+
+
+</LinearLayout>
