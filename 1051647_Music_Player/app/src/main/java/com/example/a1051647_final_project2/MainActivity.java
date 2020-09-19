@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     private SQLiteDatabase db=null;
 
-
     private TextView txtAccount,txtPassword;
     private EditText edtAccount,edtPassword;
     private Button btnLogin,btnexit,btnRegister;
@@ -46,20 +45,17 @@ public class MainActivity extends AppCompatActivity {
         btnexit.setOnClickListener(exitListener);
         btnRegister.setOnClickListener(registerListener);
 
+
+        db=openOrCreateDatabase("db1.db", Context.MODE_PRIVATE,null);
         try{
-            db=openOrCreateDatabase("db1.db", Context.MODE_PRIVATE,null);
-            String table = "CREATE TABLE IF NOT EXISTS"+" user(userId TEXT PRIMARY KEY ,pwd TEXT NOT NULL)";
+            String table = "CREATE TABLE "+" user(userId TEXT PRIMARY KEY ,pwd TEXT NOT NULL)";
             db.execSQL(table);
             String str1="INSERT INTO user(userId,pwd) values"+" ('aaa','123456')";
             db.execSQL(str1);
-            String str2="INSERT INTO user(userId,pwd) values"+" ('asd','98765')";
-            db.execSQL(str2);
-            String str3="INSERT INTO user(userId,pwd) values"+" ('amy','13579')";
-            db.execSQL(str3);
-            Toast toast=Toast.makeText(MainActivity.this,"success",Toast.LENGTH_LONG);
-            toast.show();
+//            Toast toast=Toast.makeText(MainActivity.this,"db create",Toast.LENGTH_LONG);
+//            toast.show();
         }catch (Exception e){
-            Toast toast=Toast.makeText(MainActivity.this,"welcome to use app!",Toast.LENGTH_LONG);
+            Toast toast=Toast.makeText(MainActivity.this,"welcome to use music app!",Toast.LENGTH_LONG);
             toast.show();
 
         }
@@ -68,50 +64,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
-
-        db.execSQL("DROP TABLE user");
         db.close();
     }
-
-    private Button.OnClickListener registerListener=new Button.OnClickListener(){
-        public void onClick(View v){
-
-        }
-    };
 
     private Button.OnClickListener Listener=new Button.OnClickListener(){
 
         public void onClick(View v){
             String a=edtAccount.getText().toString();
             String b=edtPassword.getText().toString();
-           /* if(a.equals("aaa") && b.equals("12345")){
+
+            Cursor cursor = db.rawQuery("select * from user where userId==? and pwd==?",new String[]{a,b});
+            if( cursor.getCount() >= 1){
                 Intent intent=new Intent();
                 intent.setClass(MainActivity.this,SecondActivity.class);
                 startActivity(intent);
+                edtAccount.setText("");
+                edtPassword.setText("");
             }else{
                 Toast toast=Toast.makeText(MainActivity.this,"帳號或密碼錯誤，請重新輸入!",Toast.LENGTH_LONG);
                 toast.show();
                 edtAccount.setText("");
                 edtPassword.setText("");
-
-            }*/
-           Cursor cursor = db.rawQuery("select * from user where userId==? and pwd==?",new String[]{a,b});
-           if(cursor!=null && cursor.getCount() >= 1){
-               Intent intent=new Intent();
-               intent.setClass(MainActivity.this,SecondActivity.class);
-               startActivity(intent);
-           }else{
-               Toast toast=Toast.makeText(MainActivity.this,"帳號或密碼錯誤，請重新輸入!",Toast.LENGTH_LONG);
-               toast.show();
-               edtAccount.setText("");
-               edtPassword.setText("");
-               String[] cols = cursor.getColumnNames();
-               while(cursor.moveToNext()){
-                   for(String ColumnName:cols){
-                       Log.i("info",ColumnName+":"+cursor.getString(cursor.getColumnIndex(ColumnName)));
-                        }
-                   }
-           }
+                String[] cols = cursor.getColumnNames();
+                while(cursor.moveToNext()){
+                    for(String ColumnName:cols){
+                        Log.i("info",ColumnName+":"+cursor.getString(cursor.getColumnIndex(ColumnName)));
+                    }
+                }
+            }
         }
     };
 
@@ -122,4 +102,11 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private Button.OnClickListener registerListener=new Button.OnClickListener(){
+        public void onClick(View v){
+            Intent intent=new Intent();
+            intent.setClass(MainActivity.this,LoginActivity.class);
+            startActivity(intent);
+        }
+    };
 }

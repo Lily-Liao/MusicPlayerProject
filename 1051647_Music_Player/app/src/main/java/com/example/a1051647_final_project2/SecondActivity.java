@@ -151,23 +151,23 @@ public class SecondActivity extends AppCompatActivity {
                     if(falgPause==true){
                         mediaPlayer.start();
                         falgPause=false;
-                        Toast toast1 =Toast.makeText(SecondActivity.this,"接續播放",Toast.LENGTH_LONG);
+                        Toast toast1 =Toast.makeText(SecondActivity.this,"接續播放",Toast.LENGTH_SHORT);
                         toast1.show();
                     }else{
-                        Toast toast2 =Toast.makeText(SecondActivity.this,"重頭播放",Toast.LENGTH_LONG);
+                        Toast toast2 =Toast.makeText(SecondActivity.this,"重頭播放",Toast.LENGTH_SHORT);
                         toast2.show();
                         int a= Integer.parseInt(txtShow2.getText().toString());
                         playSong(a);
                     }
                     break;
                 case R.id.btnPause:
-                    Toast toast3 =Toast.makeText(SecondActivity.this,"暫停",Toast.LENGTH_LONG);
+                    Toast toast3 =Toast.makeText(SecondActivity.this,"暫停",Toast.LENGTH_SHORT);
                     toast3.show();
                     mediaPlayer.pause();
                     falgPause=true;
                     break;
                 case R.id.btnEnd:
-                    Toast toast4 =Toast.makeText(SecondActivity.this,"結束音樂播放程式",Toast.LENGTH_LONG);
+                    Toast toast4 =Toast.makeText(SecondActivity.this,"結束音樂播放程式",Toast.LENGTH_SHORT);
                     toast4.show();
                     mediaPlayer.release();
                     finish();
