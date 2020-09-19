@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             String pwd1 = edtUserPwd.getText().toString();
             String add1 = "INSERT INTO user (userId,pwd)  values ('"+name+"','"+pwd1+"')";
             Cursor cursor = db.rawQuery("select * from user where userId==? or pwd==?",new String[]{name,pwd1});
-            if(name.equals("") || pwd1.equals("")){
+            if(name.equals("")||name.equals("\n") || pwd1.equals("")){
                 Toast toast=Toast.makeText(LoginActivity.this,"帳號密碼不能是空白，請重新輸入~",Toast.LENGTH_LONG);
                 toast.show();
             }
